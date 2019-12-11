@@ -25,21 +25,12 @@ android {
 
         buildConfigField 'String', 'API_PERSONAL_TOKEN', "\"${api_personal_token}\""
     }
-    signingConfigs {
-        release {
-            storeFile file('../distribution/longle.keystore')
-            storePassword "123456"
-            keyAlias "longle"
-            keyPassword "123456"
-        }
-    }
     buildTypes {
         debug {
             testCoverageEnabled !project.hasProperty('android.injected.invoked.from.ide')
         }
         release {
             minifyEnabled false
-            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

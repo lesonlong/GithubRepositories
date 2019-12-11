@@ -6,7 +6,7 @@ import com.longle.data.Result.Status.ERROR
 import com.longle.data.Result.Status.SUCCESS
 import com.longle.data.api.RepoService
 import com.longle.data.model.Repo
-import com.longle.paging.PagingRequestHelper
+import com.longle.view.PagingRequestHelper
 import com.longle.util.createStatusLiveData
 import com.longle.util.toResult
 import kotlinx.coroutines.CoroutineExceptionHandler

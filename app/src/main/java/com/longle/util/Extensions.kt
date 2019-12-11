@@ -4,7 +4,7 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import com.longle.data.Result
 import com.longle.data.repository.NetworkState
-import com.longle.paging.PagingRequestHelper
+import com.longle.view.PagingRequestHelper
 import retrofit2.Response
 import timber.log.Timber
 
