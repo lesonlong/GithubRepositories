@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Values used for animations -->
+<resources>
+    <integer name="fade">200</integer>
+    <integer name="slide">200</integer>
+</resources>

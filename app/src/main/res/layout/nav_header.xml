@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="LiveData&lt;Result&lt;User>>" />
+
+        <import type="com.longle.data.model.User" />
+
+        <import type="com.longle.data.Result" />
+
+        <import type="androidx.lifecycle.LiveData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navigation_drawer_header_height"
+        android:background="?attr/colorPrimaryDark"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/navigation_drawer_header_padding_left"
+        android:paddingTop="@dimen/navigation_drawer_header_padding_top"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="@dimen/navigation_drawer_image_width"
+            android:layout_height="@dimen/navigation_drawer_image_height"
+            android:contentDescription="@null"
+            app:imageUrl="@{user.data.avatarUrl}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:text="@{user.data.name != null ? user.data.name : ``}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/ivAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/tvPublicRepos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@{user.data.publicRepos != null ? @string/text_public_repos(user.data.publicRepos) : ``}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAvatar"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/navigation_item_margin_top"
+            android:text="@{user.data.email != null ? @string/text_email(user.data.email) : ``}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPublicRepos"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/tvWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/navigation_item_margin_top"
+            android:text="@{user.data.htmlUrl != null ? @string/text_website(user.data.htmlUrl) : ``}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            tools:text="name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

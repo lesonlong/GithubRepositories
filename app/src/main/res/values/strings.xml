@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Google User Repos</string>
+    <string name="repos_title">Browse All Repositories</string>
+    <string name="repo_detail_title">Repository details</string>
+    <string name="about_app">About This App</string>
+    <string name="copy_right" translatable="false">Long.Le®</string>
+    <string name="repo_item_of_items">%s / %s [items]</string>
+    <string name="text_email">Email: <b>%s</b></string>
+    <string name="text_public_repos">Public repos: <b>%s</b></string>
+    <string name="text_website">Website: <b>%s</b></string>
+    <string name="text_language">Language: <b>%s</b></string>
+    <string name="text_watcher">Watchers: <b>%s</b></string>
+    <string name="text_last_update">Last modified date: <b>%s</b></string>
+    <string name="text_fork">Forks: <b>%s</b></string>
+    <string name="text_title">Title: <b>%s</b></string>
+    <string name="retry">Retry</string>
+</resources>

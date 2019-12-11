@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_very_small">4dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="navigation_drawer_header_height">192dp</dimen>
+    <dimen name="navigation_drawer_header_padding_top">50dp</dimen>
+    <dimen name="navigation_drawer_header_padding_left">16dp</dimen>
+    <dimen name="navigation_drawer_image_width">40dp</dimen>
+    <dimen name="navigation_drawer_image_height">40dp</dimen>
+    <dimen name="navigation_item_margin_top">4dp</dimen>
+    <dimen name="list_item_margin_top">7dp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+</resources>

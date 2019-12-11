@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/repos_fragment">
+
+    <fragment
+        android:id="@+id/repos_fragment"
+        android:name="com.longle.ui.repos.ReposFragment"
+        android:label="@string/repos_title"
+        tools:layout="@layout/fragment_repos">
+
+        <action
+            android:id="@+id/action_to_repo_detail_fragment"
+            app:destination="@id/repo_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_about_me_fragment"
+            app:destination="@id/about_me_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/repo_detail_fragment"
+        android:name="com.longle.ui.repodetail.RepoDetailFragment"
+        android:label="@string/repo_detail_title"
+        tools:layout="@layout/fragment_repo_detail">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/about_me_fragment"
+        android:name="com.longle.ui.aboutme.AboutMeFragment"
+        android:label="@string/about_app"
+        tools:layout="@layout/fragment_about_me"></fragment>
+
+</navigation>

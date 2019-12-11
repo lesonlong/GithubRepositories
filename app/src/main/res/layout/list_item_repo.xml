@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repo"
+            type="com.longle.data.model.Repo" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@{@string/text_title(repo.title)}"
+                app:layout_constraintTop_toBottomOf="@+id/stars"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Title: repository name" />
+
+            <TextView
+                android:id="@+id/tvLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/list_item_margin_top"
+                android:text="@{@string/text_language(repo.language)}"
+                app:isGone="@{repo.language == null}"
+                app:layout_constraintLeft_toRightOf="@+id/tvForksCount"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Language: Kotlin" />
+
+            <TextView
+                android:id="@+id/tvWatchersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/list_item_margin_top"
+                android:text="@{@string/text_watcher(repo.watchersCount)}"
+                app:layout_constraintLeft_toRightOf="@+id/stars"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Watchers: 5" />
+
+            <TextView
+                android:id="@+id/tvForksCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/list_item_margin_top"
+                android:text="@{@string/text_fork(repo.forksCount)}"
+                app:layout_constraintLeft_toRightOf="@+id/tvWatchersCount"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Forks: 5" />
+
+            <TextView
+                android:id="@+id/tvUpdatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@{repo.updatedAt != null ? @string/text_last_update(repo.updatedAt.substring(0, 10)) : ``}"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Last modified date: 2019-Dec-09" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@{repo.description}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUpdatedAt"
+                tools:layout_editor_absoluteX="@dimen/default_margin"
+                tools:text="this is some description more description more description" />
+
+            <TextView
+                android:id="@+id/stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:drawableStart="@android:drawable/btn_star"
+                android:drawableLeft="@android:drawable/btn_star"
+                android:drawablePadding="1dp"
+                android:gravity="center"
+                android:text="@{`` + repo.stars}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
