@@ -1,6 +1,7 @@
 # GithubRepositories
 
 This sample is for demonstrate how to architecture application base on:
+
     - Android Architecture Component (MVVM)
     - AndroidX
     - Android Paging (with Database)
